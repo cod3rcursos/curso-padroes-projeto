@@ -1,5 +1,7 @@
 package br.com.cod3r.template.sales.after.service.template;
 
+import java.util.Calendar;
+
 import br.com.cod3r.template.sales.after.model.Cart;
 
 public class BlackFriday extends BestOfferTemplate {
@@ -10,7 +12,8 @@ public class BlackFriday extends BestOfferTemplate {
 
 	@Override
 	public boolean isAppliable() {
-		return true;  //FIXME we should use calendar to be dinamic
+		Calendar now = Calendar.getInstance();
+		return now.get(Calendar.MONTH) == Calendar.NOVEMBER;
 	}
 
 	@Override
